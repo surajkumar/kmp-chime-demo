@@ -154,8 +154,6 @@ class AppViewModel(
                     _callState.update { it.copy(systemMessages = it.systemMessages + msg) }
                 }
 
-                startLocalVideo()
-
                 _callState.update { it.copy(isLoading = false, isJoined = true, isMuted = startMuted) }
             } catch (e: Exception) {
                 _callState.update {

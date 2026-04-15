@@ -29,7 +29,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
-            implementation("com.wannaverse:chimesdk-android:0.1.0")
+            implementation(libs.chimesdk.android)
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -41,7 +41,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
 
-            implementation("com.wannaverse:chimesdk:0.1.0")
+            implementation(libs.chimesdk)
         }
 
         commonTest.dependencies {
