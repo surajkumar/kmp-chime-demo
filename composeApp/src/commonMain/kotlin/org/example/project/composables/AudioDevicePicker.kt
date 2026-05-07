@@ -24,6 +24,7 @@ import com.wannaverse.chimesdk.AudioDevice
 @Composable
 fun AudioDevicePicker(
     devices: List<AudioDevice>,
+    selectedDevice: String?,
     onSelect: (AudioDevice) -> Unit,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier
@@ -54,7 +55,7 @@ fun AudioDevicePicker(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(device.label, color = Color.White, style = MaterialTheme.typography.bodyMedium)
-                    if (device.isSelected) {
+                    if (device.label == selectedDevice) {
                         Text("✓", color = MaterialTheme.colorScheme.primary)
                     } else {
                         TextButton(onClick = { onSelect(device) }) {

@@ -97,6 +97,7 @@ fun InMeetingScreen(
             if (showAudioDevices) {
                 AudioDevicePicker(
                     devices = state.audioDevices,
+                    selectedDevice = state.selectedAudioDevice?.label,
                     onSelect = { device ->
                         viewModel.selectAudioDevice(device)
                         showAudioDevices = false

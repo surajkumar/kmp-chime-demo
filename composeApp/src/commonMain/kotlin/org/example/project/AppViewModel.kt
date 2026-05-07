@@ -210,11 +210,8 @@ class AppViewModel(
     }
 
     fun selectAudioDevice(device: AudioDevice) {
-        switchAudioDevice(device.id)
-        val updated = _callState.value.audioDevices.map {
-            it.copy(isSelected = it.id == device.id)
-        }
-        _callState.update { it.copy(audioDevices = updated, selectedAudioDevice = device) }
+        switchAudioDevice(device.label)
+        _callState.update { it.copy(selectedAudioDevice = device) }
     }
 
     fun clearError() {
